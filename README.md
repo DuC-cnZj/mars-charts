@@ -1,0 +1,42 @@
+# mars helm charts
+
+> [xuanji golang version](https://github.com/DuC-cnZj/xuanji)
+
+1. `helm repo add mars-charts https://duc-cnzj.github.io/mars-charts/`
+2. `helm upgrade --install mars-charts/mars`
+
+
+## configure
+
+```yaml
+debug: false
+profile_enabled: false
+
+# 如果在集群外部，则需要配置，否则不用
+kubeconfig: ""
+
+# database 外部数据库
+db_host: xx.xx.xx.xx
+db_port: 3306
+db_database: mars
+db_username: root
+db_password: ""
+
+# 通配符域名，自动生成对应命名空间下的 https 域名
+wildcard_domain: "*.test.local"
+# cert-manager 的 cluster_issuer 名称
+cluster_issuer: "prod"
+# 集群外网访问 ip
+cluster_ip: "10.88.56.105"
+
+# imagepullsecrets: docker 私有镜像仓库需要配置相关的账号密码以及仓库地址
+imagepullsecrets:
+- username: "jack"
+    password: "12345"
+    email: "jack@example.com"
+    server: "registry.cn-hangzhou.aliyuncs.com"
+- username: "john"
+    password: "12345"
+    email: "john@example.com"
+    server: "registry.cn-hangzhou.aliyuncs.com"
+```
