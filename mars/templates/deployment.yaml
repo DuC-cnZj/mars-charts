@@ -27,7 +27,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "charts.serviceAccountName" . }}
+      serviceAccountName: user-mars
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
