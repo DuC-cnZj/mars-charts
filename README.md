@@ -12,13 +12,12 @@
 debug: false
 profile_enabled: false
 
-# 如果在集群外部，则需要配置，否则不用
-kubeconfig: ""
-
-# database 外部数据库
+# 'sqlite' or 'mysql'
+db_driver: 'sqlite'
+# if 'mysql' 外部数据库必填项
+db_database: mars
 db_host: xx.xx.xx.xx
 db_port: 3306
-db_database: mars
 db_username: root
 db_password: ""
 
