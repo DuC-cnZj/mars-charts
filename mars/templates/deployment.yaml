@@ -20,6 +20,11 @@ spec:
         {{- include "charts.selectorLabels" . | nindent 8 }}
     spec:
       volumes:
+      {{- if and .Values.persistent.enabled (eq .Values.conf.db_driver "sqlite" ) }}
+        - name: db
+          persistentVolumeClaim:
+            claimName: {{ include "charts.fullname" . }}-pvc
+      {{- end }}
         - name: config
           secret:
             secretName: {{ include "charts.fullname" . }}-secret
@@ -30,6 +35,16 @@ spec:
       serviceAccountName: user-mars
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+{{- if and .Values.persistent.enabled (eq .Values.conf.db_driver "sqlite" ) }}
+      initContainers:
+        - name: init-db
+          imagePullPolicy: IfNotPresent
+          image: busybox:latest
+          command: ["sh", "-c", "if [ ! -f /data/sqlite.db ]; then touch /data/sqlite.db;fi;"]
+          volumeMounts:
+          - name: db
+            mountPath: /data
+{{- end }}
       containers:
         - name: {{ .Chart.Name }}
           command:
@@ -41,6 +56,10 @@ spec:
           - name: config
             mountPath: /config.yaml
             subPath: config.yaml
+        {{- if and .Values.persistent.enabled (eq .Values.conf.db_driver "sqlite" ) }}
+          - name: db
+            mountPath: /data
+        {{- end }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"

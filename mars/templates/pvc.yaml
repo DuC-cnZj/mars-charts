@@ -1,0 +1,19 @@
+{{ if and .Values.persistent.enabled (eq .Values.conf.db_driver "sqlite" ) }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  annotations:
+    "helm.sh/resource-policy": keep
+  labels:
+  {{- include "charts.labels" . | nindent 4 }}
+  name: {{ include "charts.fullname" . }}-pvc
+spec:
+{{- if .Values.persistent.storageClassName }}
+  storageClassName: {{ .Values.persistent.storageClassName }}
+{{- end }}
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ default "10Gi" .Values.persistent.storage }}
+{{ end }}
