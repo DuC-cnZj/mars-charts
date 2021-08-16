@@ -3,7 +3,17 @@ entries:
   mars:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-07-09T16:06:14.961315+08:00"
+    created: "2021-08-16T18:30:27.940518+08:00"
+    description: devops tool.
+    digest: 66020e804b52839f93811d178720feca23b11fcb16d30cc2e0ae9f80276bf58c
+    name: mars
+    type: application
+    urls:
+    - https://duc-cnzj.github.io/mars-charts/mars-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-08-16T18:30:27.939911+08:00"
     description: devops tool.
     digest: 13a187c2cdebf3be25c7fb90b07ac6f0e5be90910ad3a08efce7200b3104e42f
     name: mars
@@ -13,7 +23,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-07-09T16:06:14.960746+08:00"
+    created: "2021-08-16T18:30:27.939291+08:00"
     description: devops tool.
     digest: 7c68b3b802d4e8628e9b533645cd11d7dd8bfd3bf8ffdd2f93604f96a7da0477
     name: mars
@@ -23,7 +33,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-07-09T16:06:14.960318+08:00"
+    created: "2021-08-16T18:30:27.93886+08:00"
     description: devops tool.
     digest: af306783d65117cc75f787ac48543783a9bdfdf94f0269550cb46f8ec35c33d3
     name: mars
@@ -33,7 +43,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-07-09T16:06:14.959823+08:00"
+    created: "2021-08-16T18:30:27.938171+08:00"
     description: devops tool.
     digest: e2fc2c9a22d9cca0121a84b6df4dacec66083682d230b88c088bc8247113612b
     name: mars
@@ -41,4 +51,4 @@ entries:
     urls:
     - https://duc-cnzj.github.io/mars-charts/mars-0.1.0.tgz
     version: 0.1.0
-generated: "2021-07-09T16:06:14.957942+08:00"
+generated: "2021-08-16T18:30:27.936719+08:00"

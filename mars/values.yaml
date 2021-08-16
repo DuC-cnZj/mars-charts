@@ -75,6 +75,8 @@ conf:
   db_username: root
   db_password: ""
 
+  install_timeout: 90s
+
   wildcard_domain: "*.test.local"
   cluster_issuer: "prod"
   external_ip: "xx.xx.xx.xx"
