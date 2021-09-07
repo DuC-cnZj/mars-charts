@@ -78,10 +78,10 @@ conf:
   install_timeout: 90s
 
   wildcard_domain: "*.test.local"
-  cluster_issuer: "prod"
+  cluster_issuer: ""
   external_ip: "xx.xx.xx.xx"
 
-  gitlab_token: "xxxx"
+  gitlab_token: ""
   gitlab_baseurl: "https://gitlab.com/api/v4"
 
   imagepullsecrets:
