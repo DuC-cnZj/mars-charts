@@ -25,7 +25,7 @@ db_password: ""
 wildcard_domain: "*.test.local"
 # cert-manager 的 cluster_issuer 名称
 cluster_issuer: "prod"
-# 集群外网访问 ip
+# 集群lb ip
 external_ip: "10.88.56.105"
 
 # imagepullsecrets: docker 私有镜像仓库需要配置相关的账号密码以及仓库地址
