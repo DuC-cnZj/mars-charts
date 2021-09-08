@@ -66,6 +66,7 @@ persistent:
 conf: 
   debug: false
   profile_enabled: false
+  log_channel: "zap"
 
   # 'sqlite' or 'mysql'
   db_driver: 'sqlite'
