@@ -8,7 +8,6 @@ nameOverride: ""
 fullnameOverride: ""
 
 serviceAccount:
-  # Annotations to add to the service account
   annotations: {}
 
 podAnnotations: {}
@@ -26,6 +25,8 @@ securityContext: {}
 
 service:
   type: ClusterIP
+  # if type eq "NodePort", nodePort works!
+  # nodePort: 
 
 ingress:
   enabled: false
