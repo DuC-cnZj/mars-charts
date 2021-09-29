@@ -1,3 +1,15 @@
+redis:
+  enabled: true
+  master:
+    persistence:
+      enabled: false
+  auth:
+    password: "mars-redis-password"
+  replica:
+    replicaCount: 0
+
+replicaCount: 3
+
 image:
   repository: registry.cn-hangzhou.aliyuncs.com/duc-cnzj/mars
   pullPolicy: Always
@@ -65,7 +77,7 @@ persistent:
 
 conf: 
   debug: false
-  profile_enabled: false
+  profile_enabled: true
   log_channel: "zap"
 
   # 'sqlite' or 'mysql'

@@ -2,5 +2,11 @@ apiVersion: v2
 name: mars
 description: devops tool.
 type: application
-version: 0.2.4
+version: 0.3.0
 appVersion: "1.16.0"
+
+dependencies:
+- name: redis
+  version: "15.4.0"
+  repository: "https://charts.bitnami.com/bitnami"
+  condition: redis.enabled
