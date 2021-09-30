@@ -5,11 +5,11 @@ metadata:
   labels:
     {{- include "charts.labels" . | nindent 4 }}
 spec:
-{{- if not .Values.redis.enabled }}
+# {{- if not .Values.redis.enabled }}
   replicas: 1
-{{- else }}
-  replicas: {{ default 1 .Values.replicaCount }}
-{{- end }}
+# {{- else }}
+#   replicas: {{ default 1 .Values.replicaCount }}
+# {{- end }}
   selector:
     matchLabels:
       {{- include "charts.selectorLabels" . | nindent 6 }}

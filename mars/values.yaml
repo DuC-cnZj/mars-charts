@@ -8,7 +8,7 @@ redis:
   replica:
     replicaCount: 0
 
-replicaCount: 3
+# replicaCount: 1
 
 image:
   repository: registry.cn-hangzhou.aliyuncs.com/duc-cnzj/mars
