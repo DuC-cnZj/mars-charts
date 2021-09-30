@@ -1,5 +1,5 @@
 redis:
-  enabled: true
+  enabled: false
   master:
     persistence:
       enabled: false
