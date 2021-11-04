@@ -105,13 +105,13 @@ conf:
       server: "registry.cn-hangzhou.aliyuncs.com"
 
   admin_password: "123456"
-  oidc:
-  - name: "sso"
-    enabled: true
-    provider_url: "http://127.0.0.1:9001"
-    client_id: "sso-xxx"
-    client_secret: "xxx"
-    redirect_url: "http://127.0.0.1:3000/auth/callback"
+  # oidc:
+  # - name: "sso"
+  #   enabled: true
+  #   provider_url: "http://127.0.0.1:9001"
+  #   client_id: "sso-xxx"
+  #   client_secret: "xxx"
+  #   redirect_url: "http://127.0.0.1:3000/auth/callback"
 
   private_key: |-
     -----BEGIN RSA PRIVATE KEY-----

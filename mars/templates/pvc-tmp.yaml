@@ -1,0 +1,17 @@
+{{ if gt .Values.replicaCount 1.0 }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+  {{- include "charts.labels" . | nindent 4 }}
+  name: {{ include "charts.fullname" . }}-pvc-tmp
+spec:
+{{- if .Values.persistent.storageClassName }}
+  storageClassName: {{ .Values.persistent.storageClassName }}
+{{- end }}
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 3Gi
+{{ end }}

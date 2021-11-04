@@ -24,6 +24,11 @@ spec:
         {{- include "charts.selectorLabels" . | nindent 8 }}
     spec:
       volumes:
+      {{- if gt .Values.replicaCount 1.0 }}
+        - name: tmpdir
+          persistentVolumeClaim:
+            claimName: {{ include "charts.fullname" . }}-pvc-tmp
+      {{- end }}
       {{- if (eq .Values.conf.db_driver "sqlite" ) }}
         - name: db
       {{- if .Values.persistent.enabled }}
@@ -57,6 +62,10 @@ spec:
         {{- if eq .Values.conf.db_driver "sqlite" }}
           - name: db
             mountPath: /data
+        {{- end }}
+        {{- if gt .Values.replicaCount 1.0 }}
+          - name: tmpdir
+            mountPath: /tmp
         {{- end }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
