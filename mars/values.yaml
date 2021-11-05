@@ -97,6 +97,9 @@ conf:
 
   gitlab_token: ""
   gitlab_baseurl: "https://gitlab.com/api/v4"
+  picture_plugin:
+    name: picture_bing
+  #  name: picture_cartoon
 
   imagepullsecrets:
     - username: "jack"
