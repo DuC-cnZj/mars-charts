@@ -16,6 +16,10 @@ spec:
   template:
     metadata:
       annotations:
+      {{- if .Values.metrics and .Values.metrics.enabled }}
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9091"
+      {{- end }}
         checksum/config: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
       {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
@@ -72,6 +76,9 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
+            - name: metrics
+              containerPort: 9091
+              protocol: TCP
             - name: http
               containerPort: 6000
               protocol: TCP

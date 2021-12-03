@@ -10,6 +10,9 @@ redis:
 
 replicaCount: 2
 
+metrics:
+  enabled: true
+
 image:
   repository: registry.cn-hangzhou.aliyuncs.com/duc-cnzj/mars
   pullPolicy: Always
