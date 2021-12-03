@@ -16,7 +16,7 @@ spec:
   template:
     metadata:
       annotations:
-      {{- if .Values.metrics and .Values.metrics.enabled }}
+      {{- if .Values.metrics.enabled }}
         prometheus.io/scrape: "true"
         prometheus.io/port: "9091"
       {{- end }}
