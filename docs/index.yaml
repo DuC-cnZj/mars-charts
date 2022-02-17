@@ -2,8 +2,23 @@ apiVersion: v1
 entries:
   mars:
   - apiVersion: v2
+    appVersion: 3.6.0
+    created: "2022-02-17T22:09:33.78408+08:00"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 15.4.0
+    description: devops tool.
+    digest: 959af7ad84245754ac542aa1e539f99d1bca8ef622509a3216c97b879e7b33e8
+    name: mars
+    type: application
+    urls:
+    - https://duc-cnzj.github.io/mars-charts/mars-1.4.0.tgz
+    version: 1.4.0
+  - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.500561+08:00"
+    created: "2022-02-17T22:09:33.780882+08:00"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -18,7 +33,7 @@ entries:
     version: 1.3.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.49699+08:00"
+    created: "2022-02-17T22:09:33.776957+08:00"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -33,7 +48,7 @@ entries:
     version: 1.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.493222+08:00"
+    created: "2022-02-17T22:09:33.77284+08:00"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -48,7 +63,7 @@ entries:
     version: 1.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.488979+08:00"
+    created: "2022-02-17T22:09:33.768604+08:00"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -63,7 +78,7 @@ entries:
     version: 1.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.484659+08:00"
+    created: "2022-02-17T22:09:33.764257+08:00"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -78,7 +93,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.480711+08:00"
+    created: "2022-02-17T22:09:33.760387+08:00"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -93,7 +108,7 @@ entries:
     version: 1.0.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.476448+08:00"
+    created: "2022-02-17T22:09:33.756052+08:00"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -108,7 +123,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.472506+08:00"
+    created: "2022-02-17T22:09:33.75191+08:00"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -123,7 +138,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.468049+08:00"
+    created: "2022-02-17T22:09:33.747622+08:00"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -138,7 +153,7 @@ entries:
     version: 0.3.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.463573+08:00"
+    created: "2022-02-17T22:09:33.743288+08:00"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -153,7 +168,7 @@ entries:
     version: 0.3.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.459602+08:00"
+    created: "2022-02-17T22:09:33.739594+08:00"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -168,7 +183,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.45566+08:00"
+    created: "2022-02-17T22:09:33.735573+08:00"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -183,7 +198,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.451919+08:00"
+    created: "2022-02-17T22:09:33.731642+08:00"
     description: devops tool.
     digest: 4643930456d136c41114441fe58023f2c99eaa71980faa1a4e0fa9d526cb1308
     name: mars
@@ -193,7 +208,7 @@ entries:
     version: 0.2.5
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.450746+08:00"
+    created: "2022-02-17T22:09:33.731005+08:00"
     description: devops tool.
     digest: 226bef14781ed99a57f5420ee2c437283595548fb8a6decea2fde5139680ed10
     name: mars
@@ -203,7 +218,7 @@ entries:
     version: 0.2.4
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.450386+08:00"
+    created: "2022-02-17T22:09:33.730622+08:00"
     description: devops tool.
     digest: 325d1999962517e283c7f0540dfab21c4150ba3d5385bd85bc0af2e486980188
     name: mars
@@ -213,7 +228,7 @@ entries:
     version: 0.2.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.449821+08:00"
+    created: "2022-02-17T22:09:33.73022+08:00"
     description: devops tool.
     digest: b177b26264d7e91ea8f20ec7f410d179c89169d9757774a237aba9e1e5d7bfff
     name: mars
@@ -223,7 +238,7 @@ entries:
     version: 0.2.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.449485+08:00"
+    created: "2022-02-17T22:09:33.729866+08:00"
     description: devops tool.
     digest: 66020e804b52839f93811d178720feca23b11fcb16d30cc2e0ae9f80276bf58c
     name: mars
@@ -233,7 +248,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.448997+08:00"
+    created: "2022-02-17T22:09:33.72935+08:00"
     description: devops tool.
     digest: 13a187c2cdebf3be25c7fb90b07ac6f0e5be90910ad3a08efce7200b3104e42f
     name: mars
@@ -243,7 +258,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.448485+08:00"
+    created: "2022-02-17T22:09:33.728818+08:00"
     description: devops tool.
     digest: 7c68b3b802d4e8628e9b533645cd11d7dd8bfd3bf8ffdd2f93604f96a7da0477
     name: mars
@@ -253,7 +268,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.44788+08:00"
+    created: "2022-02-17T22:09:33.728272+08:00"
     description: devops tool.
     digest: af306783d65117cc75f787ac48543783a9bdfdf94f0269550cb46f8ec35c33d3
     name: mars
@@ -263,7 +278,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-14T18:04:35.447378+08:00"
+    created: "2022-02-17T22:09:33.727535+08:00"
     description: devops tool.
     digest: e2fc2c9a22d9cca0121a84b6df4dacec66083682d230b88c088bc8247113612b
     name: mars
@@ -271,4 +286,4 @@ entries:
     urls:
     - https://duc-cnzj.github.io/mars-charts/mars-0.1.0.tgz
     version: 0.1.0
-generated: "2021-12-14T18:04:35.446376+08:00"
+generated: "2022-02-17T22:09:33.726923+08:00"
