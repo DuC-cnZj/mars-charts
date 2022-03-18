@@ -46,14 +46,14 @@ service:
 ingress:
   enabled: false
   # className: ""
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    kubernetes.io/tls-acme: "true"
-  hosts:
-    - host: mars.k8s.local
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts: []
+    # - host: mars.k8s.local
+    #   paths:
+    #     - path: /
+    #       pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -114,11 +114,11 @@ conf:
     name: picture_bing
   #  name: picture_cartoon
 
-  imagepullsecrets:
-    - username: "jack"
-      password: "12345"
-      email: "jack@example.com"
-      server: "registry.cn-hangzhou.aliyuncs.com"
+  imagepullsecrets: []
+    # - username: "jack"
+    #   password: "12345"
+    #   email: "jack@example.com"
+      # server: "registry.cn-hangzhou.aliyuncs.com"
 
   admin_password: "123456"
   # oidc:
