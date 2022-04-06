@@ -54,6 +54,7 @@ spec:
             - serve
             - --config=/config.yaml
             - --app_port=6000
+            - --grpc_port=50000
           volumeMounts:
           - name: config
             mountPath: /config.yaml
@@ -72,6 +73,9 @@ spec:
               protocol: TCP
             - name: http
               containerPort: 6000
+              protocol: TCP
+            - name: grpc
+              containerPort: 50000
               protocol: TCP
           livenessProbe:
             httpGet:

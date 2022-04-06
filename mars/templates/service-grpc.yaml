@@ -1,0 +1,22 @@
+{{- if .Values.grpc.service.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "charts.fullname" . }}-grpc
+  labels:
+    {{- include "charts.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.grpc.service.type }}
+  ports:
+    - port: 50000
+      targetPort: http
+      protocol: TCP
+      name: grpc
+    {{- if eq .Values.grpc.service.type "NodePort" }}
+      {{- if .Values.grpc.service.nodePort }}
+      nodePort: {{ .Values.grpc.service.nodePort }}
+      {{- end }}
+    {{- end }}
+  selector:
+    {{- include "charts.selectorLabels" . | nindent 4 }}
+{{- end -}}
