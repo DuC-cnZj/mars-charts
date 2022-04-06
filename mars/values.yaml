@@ -39,7 +39,9 @@ securityContext: {}
   # runAsUser: 1000
 
 grpc:
+  enabled: false
   service:
+    enabled: false
     type: ClusterIP
     # if type eq "NodePort", nodePort works!
     # nodePort:

@@ -1,3 +1,4 @@
+{{- if .Values.grpc.enabled -}}
 {{- if .Values.grpc.ingress.enabled -}}
 {{- $fullName := include "charts.fullname" . -}}
 {{- $svcPort := 50000 -}}
@@ -58,4 +59,5 @@ spec:
               {{- end }}
           {{- end }}
     {{- end }}
+{{- end }}
 {{- end }}
