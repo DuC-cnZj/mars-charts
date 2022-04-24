@@ -28,14 +28,12 @@ spec:
         {{- include "charts.selectorLabels" . | nindent 8 }}
     spec:
       volumes:
-      {{- if (eq .Values.conf.db_driver "sqlite" ) }}
-        - name: db
+        - name: data
       {{- if .Values.persistent.enabled }}
           persistentVolumeClaim:
             claimName: {{ include "charts.fullname" . }}-pvc
       {{ else }}
           emptyDir: {}
-      {{- end }}
       {{- end }}
         - name: config
           secret:
@@ -59,10 +57,8 @@ spec:
           - name: config
             mountPath: /config.yaml
             subPath: config.yaml
-        {{- if eq .Values.conf.db_driver "sqlite" }}
-          - name: db
+          - name: data
             mountPath: /data
-        {{- end }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
