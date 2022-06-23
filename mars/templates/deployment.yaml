@@ -57,8 +57,14 @@ spec:
           - name: config
             mountPath: /config.yaml
             subPath: config.yaml
+          {{- if eq .Values.conf.db_driver "sqlite" }}
           - name: data
-            mountPath: /data
+            mountPath: /data/dbdata
+            subPath: db-data
+          {{- end }}
+          - name: data
+            mountPath: /data/uploads
+            subPath: upload-data
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
