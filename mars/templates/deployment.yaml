@@ -45,6 +45,12 @@ spec:
       serviceAccountName: user-mars
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      {{- if .Values.redis.enabled }}
+      initContainers:
+      - name: wait-redis-ready
+        image: busybox:latest
+        command: ['sh', '-c', "until nc -w120 -vz {{.Release.Name}}-redis-master.{{.Release.Namespace}}.svc.cluster.local {{.Values.redis.master.service.port }}; do echo waiting for redis ready; sleep 1; done"]
+      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           command:
