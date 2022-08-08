@@ -86,10 +86,14 @@ spec:
               containerPort: 50000
               protocol: TCP
           livenessProbe:
+            failureThreshold: 6
+            timeoutSeconds: 5
             httpGet:
               path: /ping
               port: http
           readinessProbe:
+            failureThreshold: 3
+            timeoutSeconds: 5
             httpGet:
               path: /ping
               port: http
