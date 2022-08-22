@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "charts.labels" . | nindent 4 }}
 spec:
-{{- if not .Values.redis.enabled }}
+{{- if eq .Values.mode "standalone" }}
   replicas: 1
 {{- else }}
   replicas: {{ default 1 .Values.replicaCount }}
@@ -57,13 +57,11 @@ spec:
             - app
             - serve
             - --config=/config.yaml
-            - --app_port=6000
-            - --grpc_port=50000
           volumeMounts:
           - name: config
             mountPath: /config.yaml
             subPath: config.yaml
-          {{- if eq .Values.conf.db_driver "sqlite" }}
+          {{- if eq .Values.mode "standalone" }}
           - name: data
             mountPath: /data/dbdata
             subPath: db-data
@@ -92,7 +90,7 @@ spec:
               path: /ping
               port: http
           readinessProbe:
-            failureThreshold: 3
+            failureThreshold: 6
             timeoutSeconds: 5
             httpGet:
               path: /ping

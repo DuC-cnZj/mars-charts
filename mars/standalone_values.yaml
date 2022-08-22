@@ -1,0 +1,154 @@
+image:
+  repository: registry.cn-hangzhou.aliyuncs.com/duc-cnzj/mars
+  pullPolicy: Always
+  tag: "latest"
+
+redis:
+  enabled: false
+metrics:
+  enabled: true
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  annotations: {}
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+grpc:
+  enabled: false
+  service:
+    enabled: false
+    type: ClusterIP
+    # if type eq "NodePort", nodePort works!
+    # nodePort:
+  ingress:
+    enabled: false
+    # className: ""
+    annotations: {}
+      # kubernetes.io/ingress.class: nginx
+      # kubernetes.io/tls-acme: "true"
+    hosts: []
+      # - host: mars.k8s.local
+      #   paths:
+      #     - path: /
+      #       pathType: ImplementationSpecific
+    tls: []
+    #  - secretName: chart-example-tls
+    #    hosts:
+    #      - chart-example.local
+
+service:
+  type: ClusterIP
+  # if type eq "NodePort", nodePort works!
+  # nodePort: 
+
+ingress:
+  enabled: false
+  # className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts: []
+    # - host: mars.k8s.local
+    #   paths:
+    #     - path: /
+    #       pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+persistent:
+  storageClassName: ""
+  enabled: false
+  storage: 10Gi
+
+# 'standalone' 单机, 'cluster' 集群
+mode: "standalone"
+
+# standalone
+standalone_conf: 
+  debug: false
+  db_driver: 'sqlite'
+  install_timeout: 90s
+  external_ip: "xx.xx.xx.xx"
+  domain_manager_plugin:
+    name: default_domain_manager
+  #  name: manual_domain_manager
+  #  args:
+  #    wildcard_domain: "*.mars.local"
+  #    tls_key: ""
+  #    tls_crt: ""
+  #  name: cert-manager_domain_manager
+  #  args:
+  #    wildcard_domain: "*.mars.local"
+  #    cluster_issuer: "letsencrypt-mars"
+
+  git_server_plugin:
+    name: gitlab
+    args:
+      token: ""
+      baseurl: "https://gitlab.com/api/v4"
+  picture_plugin:
+    name: picture_bing
+  #  name: picture_cartoon
+
+  imagepullsecrets: []
+    # - username: "jack"
+    #   password: "12345"
+    #   email: "jack@example.com"
+      # server: "registry.cn-hangzhou.aliyuncs.com"
+
+  admin_password: "123456"
+  # oidc:
+  # - name: "sso"
+  #   enabled: true
+  #   provider_url: "http://127.0.0.1:9001"
+  #   client_id: "sso-xxx"
+  #   client_secret: "xxx"
+  #   redirect_url: "http://127.0.0.1:3000/auth/callback"
+
+  private_key: |-
+    -----BEGIN RSA PRIVATE KEY-----
+    MIICWwIBAAKBgQCdx5ZBeL3P3lH2fU/8yd4E1L880DjaKCnnnQkya+kOE7kkJNtP
+    xW4WIKsBgXUPtXUYk/uA5AkklJ/1ssiTbkM/G5J54ThsACarhiNijUznD81c7g0Q
+    6pbHYGAHU91wQgpcIv39cOKZVpFkEfIwgBMIKUvupBpGyXMU4YALVV23CQIDAQAB
+    AoGARo+kzeDumlDlvONr6zRoOybd45eHZWEC5JchLtB9qJL/gH+PKQy1X+X6NDEu
+    JflTxcsgdhMFV7u0EdCDzRNJtPKP/cU8hww0J2l3ZKTGzbbQnLIBFD3In8sEc9xe
+    3ikEjqs0EgSh3uY5XEq8qzuX3cI+FNlGyOwzM+ZcN7nWfPUCQQDOURX82COQIfAT
+    RjTshDQ55J/DUPPHyzpTER9OZNXYKp0IBBNzYyhJ6SHQHSuxHfL8W1FVHhmIsIBW
+    GQWo0y7zAkEAw8ZPJ4QH5otMsIgIfwMuPX0rO+QxwmJ6eg9ADuFr5zv6HizjAVVP
+    dKXuUU0gnemD4DncgiV2jZ0v2RzHK1aZEwJAR6G7gpgAcPB3jBmaEmwsPdV06rlW
+    io2y6FhPiEZWQME62CeiITPSLyc0SC94lfwR+zAxYt4ae2zcgggaAO2hpQJAecA5
+    d7S3iRu2XM6sofijaCAQpBV9EItX6dLUHqz4Av0cxmlZ33ljiYKr3CngD/SqS+cQ
+    CGwt91H68MXh40TeuwJARxz1VMLq7hKo8J4scAW/YrBTE4N6malYjYoR2HFs+YwL
+    cSE/4A4yfzTjN2r5GuJr8rTU7gU4Su9C8dLC0htWCA==
+    -----END RSA PRIVATE KEY-----
