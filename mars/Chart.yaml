@@ -2,7 +2,7 @@ apiVersion: v2
 name: mars
 description: devops tool.
 type: application
-version: 1.6.0
+version: 1.6.1
 appVersion: "4.7.0"
 
 dependencies:
