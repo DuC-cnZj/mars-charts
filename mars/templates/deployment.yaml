@@ -49,7 +49,7 @@ spec:
       initContainers:
       - name: wait-redis-ready
         image: busybox:latest
-        command: ['sh', '-c', "until nc -w120 -vz {{.Release.Name}}-redis-master.{{.Release.Namespace}}.svc.cluster.local {{.Values.redis.master.service.port }}; do echo waiting for redis ready; sleep 1; done"]
+        command: ['sh', '-c', "until nc -w120 -vz {{.Release.Name}}-redis-master.{{.Release.Namespace}}.svc.cluster.local {{.Values.redis.master.service.ports.redis }}; do echo waiting for redis ready; sleep 1; done"]
       {{- end }}
       containers:
         - name: {{ .Chart.Name }}
