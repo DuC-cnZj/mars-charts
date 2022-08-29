@@ -84,6 +84,7 @@ tolerations: []
 
 affinity: {}
 
+# 使用s3时，可以不开启 persistent 
 persistent:
   storageClassName: ""
   enabled: false
@@ -118,6 +119,11 @@ cluster_conf:
   install_timeout: 90s
 
   external_ip: "xx.xx.xx.xx"
+
+  s3_endpoint: ""
+  s3_access_key_id: ""
+  s3_secret_access_key: ""
+  s3_use_ssl: false
 
   domain_manager_plugin:
     name: default_domain_manager

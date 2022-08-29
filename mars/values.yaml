@@ -85,6 +85,7 @@ tolerations: []
 
 affinity: {}
 
+# 使用s3时，可以不开启 persistent 
 persistent:
   storageClassName: ""
   enabled: false
@@ -95,6 +96,10 @@ mode: "standalone"
 
 # standalone
 standalone_conf: {}
+  # s3_endpoint: ""
+  # s3_access_key_id: ""
+  # s3_secret_access_key: ""
+  # s3_use_ssl: false
   # debug: false
   # db_driver: 'sqlite'
   # install_timeout: 90s
@@ -166,8 +171,12 @@ standalone_conf: {}
 # replicaCount: 2
 
 cluster_conf: {} 
-#   debug: false
+  # debug: false
 
+  # s3_endpoint: ""
+  # s3_access_key_id: ""
+  # s3_secret_access_key: ""
+  # s3_use_ssl: false
 #   db_driver: 'mysql'
 #   db_database: mars
 #   db_host: xx.xx.xx.xx
