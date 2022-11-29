@@ -10,7 +10,7 @@ spec:
   type: {{ .Values.grpc.service.type }}
   ports:
     - port: 50000
-      targetPort: http
+      targetPort: grpc
       protocol: TCP
       name: grpc
     {{- if eq .Values.grpc.service.type "NodePort" }}
