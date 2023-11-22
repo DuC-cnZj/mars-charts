@@ -106,7 +106,13 @@ redis:
 
 replicaCount: 2
 
-cluster_conf: 
+cluster_conf: |
+  app_port: 6000
+  grpc_port: 50000
+  log_channel: zap
+
+  upload_dir: /data/uploads
+  git_server_cached: true
   debug: false
 
   db_driver: 'mysql'
@@ -125,6 +131,12 @@ cluster_conf:
   s3_secret_access_key: ""
   s3_use_ssl: false
 
+  ws_sender_plugin:
+    name: ws_sender_redis
+    args:
+      addr: {{.Release.Name}}-redis-master.{{.Release.Namespace}}.svc.cluster.local:{{.Values.redis.master.service.ports.redis }}
+      password: {{ .Values.redis.auth.password }}
+      db: 1
   domain_manager_plugin:
     name: default_domain_manager
   #  name: manual_domain_manager

@@ -96,7 +96,7 @@ persistent:
 mode: "standalone"
 
 # standalone
-standalone_conf: 
+standalone_conf: |
   debug: false
   db_driver: 'sqlite'
   install_timeout: 90s
@@ -112,6 +112,8 @@ standalone_conf:
   #  args:
   #    wildcard_domain: "*.mars.local"
   #    cluster_issuer: "letsencrypt-mars"
+
+  db_database: /data/dbdata/db.sqlite
 
   git_server_plugin:
     name: gitlab
