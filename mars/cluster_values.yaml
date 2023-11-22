@@ -110,6 +110,7 @@ cluster_conf: |
   app_port: 6000
   grpc_port: 50000
   log_channel: zap
+  kubeconfig: ""
 
   upload_dir: /data/uploads
   git_server_cached: true

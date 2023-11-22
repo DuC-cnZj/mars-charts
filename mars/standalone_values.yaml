@@ -99,6 +99,7 @@ mode: "standalone"
 standalone_conf: |
   debug: false
   db_driver: 'sqlite'
+  kubeconfig: ""
   install_timeout: 90s
   external_ip: "xx.xx.xx.xx"
   domain_manager_plugin:

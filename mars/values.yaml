@@ -97,6 +97,14 @@ mode: "standalone"
 
 # standalone
 standalone_conf: ""
+  # app_port: 6000
+  # grpc_port: 50000
+  # log_channel: zap
+  # kubeconfig: ""
+
+  # upload_dir: /data/uploads
+  # git_server_cached: true
+  # debug: false
   # s3_endpoint: ""
   # s3_access_key_id: ""
   # s3_secret_access_key: ""
@@ -172,6 +180,13 @@ standalone_conf: ""
 # replicaCount: 2
 
 cluster_conf: ""
+  # app_port: 6000
+  # grpc_port: 50000
+  # log_channel: zap
+  # kubeconfig: ""
+
+  # upload_dir: /data/uploads
+  # git_server_cached: true
   # debug: false
 
   # s3_endpoint: ""
