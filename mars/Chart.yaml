@@ -2,8 +2,8 @@ apiVersion: v2
 name: mars
 description: devops tool.
 type: application
-version: 1.7.1
-appVersion: "4.8.0"
+version: 1.8.0
+appVersion: "4.23"
 
 dependencies:
 - name: redis
